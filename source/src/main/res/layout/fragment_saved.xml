@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="mainViewModel"
+            type="com.example.food_recipes.viewmodels.MainViewModel" />
+
+        <variable
+            name="savedRecipesAdapter"
+            type="com.example.food_recipes.core.adapters.SavedRecipesAdapter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.saved.SavedFragment">
+
+        <TextView
+            android:id="@+id/title_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Saved recipes"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/savedRecipesDelete_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_round_delete_24"
+            app:backgroundTint="@color/secondary"
+            app:layout_constraintBottom_toBottomOf="@+id/title_textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/title_textView"
+            app:tint="@color/white" />
+
+        <View
+            android:id="@+id/gradientShadow_view4"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginBottom="-30dp"
+            android:alpha="0.3"
+            android:background="@drawable/gradient_shadow"
+            android:rotationX="180"
+            app:layout_constraintBottom_toBottomOf="@+id/savedRecipesDelete_fab"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/savedRecipes_recyclerView"
+            setData="@{savedRecipesAdapter}"
+            setVisibility="@{mainViewModel.readSavedRecipes}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/gradientShadow_view4" />
+
+        <ImageView
+            android:id="@+id/emptyState_imageView"
+            setVisibility="@{mainViewModel.readSavedRecipes}"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:alpha="0.5"
+            android:src="@drawable/ic_round_bookmark_border_24"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.45"
+            app:tint="@color/navy" />
+
+        <TextView
+            android:id="@+id/emptyState_textView"
+            setVisibility="@{mainViewModel.readSavedRecipes}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:alpha="0.5"
+            android:fontFamily="@font/montserrat"
+            android:text="Enjoy exploring the available recipes!"
+            android:textColor="@color/navy"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@+id/emptyState_imageView"
+            app:layout_constraintStart_toStartOf="@+id/emptyState_imageView"
+            app:layout_constraintTop_toBottomOf="@+id/emptyState_imageView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

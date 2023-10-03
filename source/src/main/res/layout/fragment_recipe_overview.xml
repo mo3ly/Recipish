@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/fragment_recipe_overview_scene"
+    tools:context=".ui.recipe.details.RecipeOverviewFragment">
+
+
+    <ImageView
+        android:id="@+id/recipeBanner_imageView"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <View
+        android:id="@+id/gradientShadow_view"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:background="@drawable/gradient_shadow"
+        app:layout_constraintBottom_toBottomOf="@+id/recipeBanner_imageView"
+        app:layout_constraintEnd_toEndOf="@+id/recipeBanner_imageView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/recipeBanner_imageView"
+        app:layout_constraintTop_toTopOf="@+id/recipeBanner_imageView"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+    <TextView
+        android:id="@+id/recipeTitle_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Title"
+        android:textColor="@color/secondary"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recipeBanner_imageView" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="44dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="84dp"
+        app:cardBackgroundColor="@color/orange"
+        app:cardCornerRadius="20dp"
+        app:contentPadding="3dp"
+        app:layout_constraintEnd_toEndOf="@+id/recipeTitle_textView"
+        app:layout_constraintTop_toBottomOf="@+id/recipeTitle_textView">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            app:cardCornerRadius="100dp">
+
+            <ImageView
+                android:id="@+id/imageView00"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:translationX="7dp"
+                android:translationY="7dp"
+                app:srcCompat="@drawable/ic_baseline_timelapse_24" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/recipeMinutes_overview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="45"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:translationX="10dp"
+            android:translationY="42dp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView1"
+        android:layout_width="44dp"
+        android:layout_height="70dp"
+        android:layout_marginRight="32dp"
+        app:cardBackgroundColor="@color/secondary"
+        app:cardCornerRadius="20dp"
+        app:contentPadding="3dp"
+        app:layout_constraintEnd_toStartOf="@+id/cardView"
+        app:layout_constraintTop_toTopOf="@+id/cardView">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            app:cardCornerRadius="100dp">
+
+            <ImageView
+                android:id="@+id/imageView001"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:translationX="7dp"
+                android:translationY="7dp"
+                app:srcCompat="@drawable/ic_round_favorite_border_24" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/recipeLikes_overview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:translationX="12dp"
+            android:translationY="42dp" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="44dp"
+        android:layout_height="70dp"
+        android:layout_marginRight="32dp"
+        app:cardBackgroundColor="@color/secondary"
+        app:cardCornerRadius="20dp"
+        app:contentPadding="3dp"
+        app:layout_constraintEnd_toStartOf="@+id/cardView1"
+        app:layout_constraintTop_toTopOf="@+id/cardView1">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            app:cardCornerRadius="100dp">
+
+            <ImageView
+                android:id="@+id/imageView0011"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:translationX="7dp"
+                android:translationY="7dp"
+                app:srcCompat="@drawable/ic_loading_24" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/recipeScore_overview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:translationX="12dp"
+            android:translationY="42dp" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <ImageView
+        android:id="@+id/recipeVegetarian_imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/ic_round_check_circle_outline_24"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/recipeTitle_textView"
+        app:layout_constraintTop_toBottomOf="@+id/recipeTitle_textView"
+        app:tint="@color/secondary" />
+
+    <TextView
+        android:id="@+id/recipeVegetarian_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Vegetarian"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/recipeVegetarian_imageView"
+        app:layout_constraintStart_toEndOf="@+id/recipeVegetarian_imageView"
+        app:layout_constraintTop_toTopOf="@+id/recipeVegetarian_imageView" />
+
+    <ImageView
+        android:id="@+id/recipeVegan_imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/ic_round_check_circle_outline_24"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/recipeVegetarian_imageView"
+        app:layout_constraintTop_toBottomOf="@+id/recipeVegetarian_imageView"
+        app:tint="@color/secondary" />
+
+    <TextView
+        android:id="@+id/recpieVegan_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Vegan"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/recipeVegan_imageView"
+        app:layout_constraintStart_toEndOf="@+id/recipeVegan_imageView"
+        app:layout_constraintTop_toTopOf="@+id/recipeVegan_imageView" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recipeVegan_imageView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:fontFamily="@font/montserrat"
+                android:paddingTop="0dp"
+                android:text="Description"
+                android:textColor="@color/orange"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/recipeDesc_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:text="TextView"
+                android:textColor="@color/secondary"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:paddingTop="20dp"
+                android:text="Ingredients"
+                android:textColor="@color/orange"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ingredientRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
